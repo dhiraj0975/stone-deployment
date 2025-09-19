@@ -1,11 +1,10 @@
 {
   "name": "01_product_01",
   "version": "1.0.0",
-   "buildCommand": "npm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
   "main": "index.js",
-   
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
