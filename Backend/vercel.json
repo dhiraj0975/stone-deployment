@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "builds": [
+    { "src": "Backend/server.js", "use": "@vercel/node" },
+    { "src": "client/package.json", "use": "@vercel/static-build" }
+  ],
   "routes": [
-    { "src": "/.*", "dest": "/index.html" }
+    { "src": "/api/(.*)", "dest": "Backend/server.js" },
+    { "src": "/(.*)", "dest": "client/dist/$1" }
   ]
 }
